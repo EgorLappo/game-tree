@@ -8,7 +8,6 @@ copyright:           "Copyright (c) 2022 Egor Lappo"
 
 extra-source-files:
 - README.md
-- CHANGELOG.md
 
 # Metadata used when publishing your package
 # synopsis:            Short description of your package
@@ -22,7 +21,10 @@ description:         Please see the README on GitHub at <https://github.com/Egor
 dependencies:
 - base >= 4.7 && < 5
 - bytestring
-- text
+- directory
+- unordered-containers
+- split
+#- parallel-io
 
 ghc-options:
 - -Wall
@@ -49,13 +51,3 @@ executables:
     dependencies:
     - game-tree
 
-tests:
-  game-tree-test:
-    main:                Spec.hs
-    source-dirs:         test
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
-    dependencies:
-    - game-tree
