@@ -70,10 +70,3 @@ writeCountMap dir m = do
         (names, nums) = unzip $ counts cnt
         cntStr = BS.unlines [BS.intercalate (BS.pack ", ") names, BS.intercalate (BS.pack ", ") nums]
     in BS.writeFile file cntStr
-
--- writeCounts :: String -> String -> Tree -> IO ()
--- writeCounts file tag tree = BS.writeFile file $ BS.unlines [names', nums']
---     where (names, nums) = unzip . map (\m -> (move m, BS.pack $ show $ count m)) $ leaves tree
---           names' = BS.intercalate (BS.pack ", ") $ "tag" : names 
---           nums'  = BS.intercalate (BS.pack ", ") $ BS.pack tag : nums 
-

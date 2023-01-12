@@ -19,7 +19,6 @@ main = let datadir = "data"
                 let cd = countdir ++ "/"++ fileName f ++ "/"
                 createDirectoryIfMissing True cd
                 return cd
-            return ()
             
             forM_ (zip files countdirs) $ \(f,d) -> do
               tree <- buildTreeFromFile n (datadir ++ "/" ++ f)
